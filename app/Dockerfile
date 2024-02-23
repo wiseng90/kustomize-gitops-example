@@ -6,6 +6,6 @@ RUN mvn -f ./app/pom.xml clean package
 
 FROM openjdk:8-jre-alpine3.9
 
-RUN RUN mvn install jar:jar && cp -a ./target/spring-boot-0.0.1-SNAPSHOT.jar /demo.jar
+RUN RUN cp -a ./target/spring-boot-0.0.1-SNAPSHOT.jar /demo.jar
 
 CMD ["java", "-jar", "/demo.jar"]
