@@ -6,11 +6,7 @@ RUN mvn -f ./app/pom.xml clean package
 
 FROM openjdk:8-jre-alpine3.9
 
-ARG JAR_FILE=target/spring-boot-docker-0.0.1-SNAPSHOT.jar
+COPY --from=MAVEN_BUILD /usr/src/app/target/spring-boot-0.0.1-SNAPSHOT.jar /demo.jar
 
-WORKDIR /opt/app
-
-COPY ${JAR_FILE} /demo.jar
-
-ENTRYPOINT ["java","-jar","/demo.jar"]
+CMD ["java", "-jar", "/demo.jar"]
 
