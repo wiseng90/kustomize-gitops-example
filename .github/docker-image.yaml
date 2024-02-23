@@ -1,0 +1,20 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+    with:
+        platforms:
+           - linux/amd64
+           - linux/arm64
+      run: docker build . --file Dockerfile --tag kustomize-example:$(date +%s)
