@@ -6,7 +6,7 @@ RUN mvn -f ./app/pom.xml clean package
 
 FROM openjdk:8-jre-alpine3.9
 
-COPY --from=MAVEN_BUILD /usr/src/app/target/spring-boot-0.0.1-SNAPSHOT.jar /demo.jar
+RUN cp /app/target/spring-boot-0.0.1-SNAPSHOT.jar /usr/share/demo.jar
 
-CMD ["java", "-jar", "/demo.jar"]
+CMD ["java", "-jar", "/usr/share/demo.jar"]
 
