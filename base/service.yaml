@@ -12,3 +12,7 @@ spec:
   selector:
     app: demo
   type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 127.0.0.1
