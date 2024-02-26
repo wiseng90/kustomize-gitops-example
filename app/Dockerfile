@@ -2,9 +2,7 @@ FROM maven:3.6.1-jdk-8-alpine AS build
 
 COPY ./ ./
 
-WORKDIR /app
-
-RUN mvn clean package
+RUN mvn -f ./app/pom.xml clean package
 
 FROM openjdk:8-jre-alpine3.9
 
