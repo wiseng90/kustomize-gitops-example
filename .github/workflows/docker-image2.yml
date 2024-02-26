@@ -14,7 +14,7 @@ on:
     branches: [ main ]
 
 env:
-   GITHUB_TOKEN: dckr_pat_JC_Ul4Hrk1voNjaE1YRTV9SSETk
+   GITHUB_TOKEN: dckr_pat_eGFmhIUIvMWZq5PKl70E4Ll0uVg
 
 jobs:
   push_to_registries:
