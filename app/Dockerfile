@@ -4,7 +4,7 @@ COPY ./ ./
 
 WORKDIR /app
 
-RUN mvn pom.xml clean package
+RUN mvn clean package
 
 FROM openjdk:8-jre-alpine3.9
 
