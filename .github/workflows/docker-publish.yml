@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: .
-          file: ./app/Dockerfile
+          dockerfile: ./app/Dockerfile
           push: true
           tags: v1.0
           labels: test
