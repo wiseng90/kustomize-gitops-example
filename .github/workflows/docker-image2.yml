@@ -13,6 +13,9 @@ on:
   push:
     branches: [ main ]
 
+env:
+   GITHUB_TOKEN: dckr_pat_JC_Ul4Hrk1voNjaE1YRTV9SSETk
+
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
@@ -28,14 +31,14 @@ jobs:
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
           username: wiseng90
-          password: dckr_pat_JC_Ul4Hrk1voNjaE1YRTV9SSETk
+          password: ${{env.GITHUB_TOKEN}}
 
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: dckr_pat_JC_Ul4Hrk1voNjaE1YRTV9SSETk
+          password: ${{env.GITHUB_TOKEN}}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
