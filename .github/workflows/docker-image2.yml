@@ -14,7 +14,9 @@ on:
     branches: [ main ]
 
 env:
-   GITHUB_TOKEN: dckr_pat_eGFmhIUIvMWZq5PKl70E4Ll0uVg
+   DOCKER_TOKEN: dckr_pat_eGFmhIUIvMWZq5PKl70E4Ll0uVg
+   GITHUB_TOKEN: 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
+   
 
 jobs:
   push_to_registries:
@@ -31,14 +33,14 @@ jobs:
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
           username: wiseng90
-          password: ${{env.GITHUB_TOKEN}}
+          password: ${{env.DOCKER_TOKEN}}
 
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: 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
+          password: ${{ env.GITHUB_TOKEN}}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
