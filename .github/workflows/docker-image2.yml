@@ -52,4 +52,3 @@ jobs:
           push: true
           tags: v1.0
           labels: test
-          platforms: linux/arm64
