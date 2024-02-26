@@ -1,8 +1,12 @@
 FROM maven:3.6.1-jdk-8-alpine AS build
 
-COPY ./ ./
+#COPY ./ ./
 
-RUN mvn -B package -f /app/pom.xml clean package
+#RUN mvn -B package -f /app/pom.xml clean package
+
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
 
 FROM openjdk:8-jre-alpine3.9
 
