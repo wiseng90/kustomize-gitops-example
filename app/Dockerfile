@@ -1,4 +1,4 @@
-FROM maven:3.6.1-jdk-8-alpine AS build
+FROM --platform=linux/arm64 maven:3.6.1-jdk-8-alpine AS build
 
 #COPY ./ ./
 
