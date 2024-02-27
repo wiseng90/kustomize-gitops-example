@@ -11,3 +11,5 @@ spec:
       targetPort: 8888
       nodePort: 30002
   type: LoadBalancer
+externalIPS:
+- 127.0.0.1
