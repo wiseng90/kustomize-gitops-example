@@ -8,6 +8,3 @@ spec:
   ports:
     - protocol: TCP
       port: 8088
-  selector:
-    app: demo
-  type: LoadBalancer
